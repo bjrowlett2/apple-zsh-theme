@@ -3,7 +3,10 @@ function zsh_User() {
 }
 
 function zsh_Directory() {
-  echo -n "%{$fg[yellow]%}%d"
+  # %d for Full paths
+  # %~ for Home-based paths
+  ZSH_APPLE_DIRECTORY_STYLE="%~"
+  echo -n "%{$fg[yellow]%}$ZSH_APPLE_DIRECTORY_STYLE"
 }
 
 function zsh_VcsInfo() {
